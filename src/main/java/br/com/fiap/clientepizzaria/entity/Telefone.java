@@ -1,10 +1,8 @@
 package br.com.fiap.clientepizzaria.entity;
 
+
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
@@ -14,11 +12,12 @@ import lombok.NoArgsConstructor;
 @Table(name = "TB_TELEFONE")
 public class Telefone {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SQ_TELEFONE")
     @SequenceGenerator(
-            name = "SQ_TELEFONE",
-            sequenceName = "SQ_TELEFONE",
+            name =  "SQ_TELEFONE",
+            sequenceName =  "SQ_TELEFONE",
             initialValue = 1,
             allocationSize = 1
     )
@@ -30,6 +29,7 @@ public class Telefone {
     private String ddd;
 
     private String numero;
+
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(

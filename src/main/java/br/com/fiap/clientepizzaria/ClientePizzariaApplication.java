@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 @SpringBootApplication
 public class ClientePizzariaApplication {
@@ -14,13 +15,12 @@ public class ClientePizzariaApplication {
 	}
 
 	@GetMapping(value = "/")
-	public String index() {
+	public String index(){
 		String hello = """
-							Bom dia!
-							
-							Seja bem-vindo(a) à Pizzaria!
+				Bom dia!
+								
+				Seja bem-vindo(a) à Pizzaria
 				""";
-
 		return hello;
 	}
 
